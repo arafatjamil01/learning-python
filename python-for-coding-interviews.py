@@ -185,3 +185,21 @@ print(arr2)
 # bad example
 # arr2 = [[0]*3]*3 # this creates a 3x3 array with all zeros, but all the rows are the same object, avoid this
 
+# Strings are similar to arrays
+s = "hello"
+print(s[0]) # h
+print(s[0:2]) # he
+
+# s[0] = "K" # Strings are immutable, this will throw error
+s += " world" # this creates a new string and assigns it to the variable, so this is n time operation
+print(s)
+ 
+# Valid numeric strings can be converter
+print(int("123") + int("123"))
+
+# Numbers can be converted to strings
+print(str(456) + str(456))
+
+# Getting the ASCII value of a char
+print(ord("a")) # 97
+print(ord("A")) # 65
