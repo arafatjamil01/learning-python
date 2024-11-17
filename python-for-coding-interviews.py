@@ -325,3 +325,58 @@ heapq.heapify(arr)
 
 while arr:
     print(heapq.heappop(arr))
+    
+# Functions
+def add(a,b):
+    return a+b
+
+print(add(12,12))
+
+# Nested functions have access to outer variables
+def outer(a):
+    x = 1
+    def inner():
+        return x + a
+    return inner()
+
+print(outer(2))
+
+# Nested functions can modify objects but no reassign
+# unless using nonlocal keyword
+
+def double(arr, val):
+    def helper():
+        for i,n in enumerate(arr):
+            arr[i] *= 2
+            
+            # val *=2 won't help, it will only modify in helper scope
+            
+            # To modify outside this scope, the varilable should be said nonlocal
+            nonlocal val
+            val *= 2
+    helper()
+    print(arr, val)
+    
+nums = [1,2,3]
+val = 5
+double(nums, val)
+
+
+# Class
+class MyClass:
+    # Constructor
+    def __init__(self, nums):
+        # Create member variables
+        self.nums = nums
+        self.size = len(nums)
+        
+    def getLength(self):
+        return self.size
+    
+    def getDoubleLenght(self):
+        return 2 * self.getLength() # Calling another function in the class
+    
+# Create an object of the class
+obj = MyClass([1,2,3])
+print(obj.getLength())
+print(obj.getDoubleLenght())
