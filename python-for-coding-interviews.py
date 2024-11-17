@@ -116,5 +116,72 @@ print(arr[-2]) # second last value
 # Slicing or sublisting an array
 arr = [1,2,3,4]
 print(arr[1:3]) # 2,3 - this doesn't inlcude the last index
+print(arr[0:4]) # 1,2,3,4 - this prints the full array, even though 4 is not in the index
 
-# Seen up to 10:35
+# unpacking - valus of the array are assigned to the variables
+a, b, c = [1, 2, 3]
+print(a, b, c)
+
+# a,b = [1,2,3] # this will throw an error, because number of items don't match the number of values in the list
+
+# looping through the array
+arr = ['w', 'o', 'r', 'd']
+
+# method 1
+for i in range(len(arr)):
+    print(arr[i])
+
+#method 2 
+for i in arr:
+    print(i)
+    
+# Using both index and value as variables
+for i, val in enumerate(arr):
+    print(i, val)
+    
+# Looping through multiple arrays silumtaneously
+nums1 = [1,2,3]
+nums2 = [4,5,6]
+
+for n1, n2 in zip(nums1, nums2): # this combines the array value for each index and prints out
+    print(n1, n2)
+    
+# Reverse an array
+arr = [1,2,3,4]
+print(arr[::-1]) # syntax is - arr[start:stop:step], here start and stop are not mentioned, so it takes the whole array
+arr.reverse() # this reverses the actual array and saves in the same variable
+print(arr)
+
+# Sorting an array
+arr = [3,1,4,2]
+arr.sort() # this sorts the actual array in place, in ascending order
+print(arr)
+arr.sort(reverse=True) # this sorts the actual array in place, in descending order
+print(arr)
+
+# Sorting a string arrray
+arr = ['word', 'apple', 'orange']
+arr.sort()
+print(arr)
+
+# Custom sort by length of the string
+arr.sort(key=len)
+print(arr)
+
+arr.sort(key=lambda x: len(x), reverse=True)
+print(arr)
+
+# List comprehension
+arr = [i+i for i in range(5)] # The first i is the value, the second i is the loop variable
+print(arr) # 0,1,2,3,4
+
+# 2-D lists
+arr = [[1,2,3], [4,5,6], [7,8,9]]
+print(arr)
+
+arr2 = [[0]*3 for _ in range(3)] # this creates a 3x3 array with all zeros, '_' is there instead of i, which is never used
+print(arr2)
+
+# bad example
+# arr2 = [[0]*3]*3 # this creates a 3x3 array with all zeros, but all the rows are the same object, avoid this
+
