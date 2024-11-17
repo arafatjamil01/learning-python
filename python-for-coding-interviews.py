@@ -218,3 +218,76 @@ print(queue)
 
 queue.popleft()
 print(queue)
+
+queue.appendleft(44)
+print(queue)
+
+queue.pop()
+print(queue)
+
+
+# Hashsets - unordered collection of unique elements
+mySet = set()
+mySet.add(1)
+mySet.add(2) # Big O(1) operation, i.e - constant time
+print(mySet)
+print(len(mySet)) # Get the lenght of the set
+print(1 in mySet) # Check if an element is in the set
+print(2 in mySet) # Check if an element is in the set
+print(3 in mySet) # Check if an element is in the set
+mySet.remove(2) # Remove an element from the set
+print(mySet)
+mySet.clear() # Clear the set
+print(mySet)
+
+# Converting a list to set
+print(set([0,1,2,3,4,4,4,5])) # this will remove the duplicates and convert it into set at the same time
+
+# Set comprehension
+mySet = {i for i in range(5)} # A set created from the values of the list
+print(mySet)
+
+# Hashmap (aka dictionary)
+myMap = {}
+myMap["key1"] = 1 # Assign a value to a key
+myMap["key2"] = 2
+
+print(myMap)
+print(len(myMap))
+
+myMap["key1"] = 3 # Update the value of the key
+print('key1' in myMap) # Check if a key is in the map
+myMap.pop("key1") # Remove a key value pair
+print(myMap)
+
+# Dict comprehension
+myMap = {i:2*i for i in range(5)} # { key: value for loop}
+print(myMap)
+
+# Looping through a dictionary
+myMap = { "alice": 90, "bob": 70}
+for key in myMap:
+    print(key, myMap[key])
+    
+for val in myMap.values(): # Print the values only
+    print(val)
+
+for val in myMap.items(): # Print the key value pairs in single braces
+    print(val)
+    
+# Tuple - immutable list
+myTuple = (1,2,3)
+print(myTuple) 
+print(myTuple[0])
+# myTuple[2] = 55 # We can index tuples but can't modify
+
+# Tuples can bee used as a key in a dictionary or hash map/set
+myMap = {(1,2): "Txt"}
+print(myMap[(1,2)])
+
+mySet = set()
+mySet.add((1,2))
+print((1,2) in mySet)
+
+# Lists can't be keys in a dictionary
+# myMap = {[1,2]: "Txt"} # This will throw an error
