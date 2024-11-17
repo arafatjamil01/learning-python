@@ -291,3 +291,37 @@ print((1,2) in mySet)
 
 # Lists can't be keys in a dictionary
 # myMap = {[1,2]: "Txt"} # This will throw an error
+
+# Heaps, by default, are sorted from min to max
+import heapq
+
+# Under the hood, heaps are arrays in the background of python
+minHeap = []
+heapq.heappush(minHeap, 5)
+heapq.heappush(minHeap, 22)
+heapq.heappush(minHeap, 2)
+
+# Min is always at index 0 
+print(minHeap[0])
+
+while len(minHeap):
+    print(heapq.heappop(minHeap))
+
+# Workaround for sorting heaps from max to min is to use negative values, by multiplying with -1, when poping, multiply with -1 again
+maxHeap = []
+heapq.heappush(maxHeap, -33)
+heapq.heappush(maxHeap, -18)
+heapq.heappush(maxHeap, -9)
+
+print(-1 * maxHeap[0])
+
+while len(maxHeap):
+    print(-1 * heapq.heappop(maxHeap))
+    
+# Build heap from initial values or arrays
+import heapq
+arr = [3,1,9,7,22]
+heapq.heapify(arr)
+
+while arr:
+    print(heapq.heappop(arr))
