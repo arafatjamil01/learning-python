@@ -203,3 +203,18 @@ print(str(456) + str(456))
 # Getting the ASCII value of a char
 print(ord("a")) # 97
 print(ord("A")) # 65
+
+# Combine a list off strings ( with an empty string #delimitor)
+strings = ["ab","cd","ef"]
+print("".join(strings)) # abcdef, nothing used as delimeter, you can use anything, space, hypen or anything you want
+
+# Queues ( double ended queue)
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(2)
+print(queue)
+
+queue.popleft()
+print(queue)
